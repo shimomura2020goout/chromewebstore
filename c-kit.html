@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-kit - Web開発者向けツールキット</title>
+    <meta name="description" content="5つの便利機能を搭載したWeb開発者向けChrome拡張機能">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+            border-radius: 0 0 40px 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .version-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 0.3rem 0;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .feature-list li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* Installation Section */
+        .installation {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: 40px;
+            margin: 3rem 0;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .installation h2 {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 2rem;
+        }
+
+        .steps {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+
+        .steps li {
+            counter-increment: step-counter;
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .steps li:before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: white;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="logo">🛠️</div>
+                <h1>C-kit</h1>
+                <p class="tagline">Web開発者向けツールキット</p>
+                <div class="version-badge">v2.0.0 - 全機能実装完了</div>
+                <p style="color: #666; margin-bottom: 2rem;">
+                    5つの便利機能を搭載したChrome拡張機能
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://github.com/shimomura2020goout/claude-first-pjts/tree/main/C-kit" class="btn btn-primary">
+                        📦 GitHubで見る
+                    </a>
+                    <a href="#installation" class="btn btn-secondary">
+                        📥 インストール方法
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="features">
+            <h2 class="section-title">5つの便利機能</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Link Checker</h3>
+                    <p>ページ内のリンクエラーを検出</p>
+                    <ul class="feature-list">
+                        <li>404/500エラーを自動検出</li>
+                        <li>リンクを色分けして表示</li>
+                        <li>詳細な統計レポート</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>URL Decode/Encode</h3>
+                    <p>URLのエンコード・デコード</p>
+                    <ul class="feature-list">
+                        <li>ワンクリックで変換</li>
+                        <li>キーボードショートカット対応</li>
+                        <li>クリップボードにコピー</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>Code Formatter</h3>
+                    <p>コードを整形・圧縮</p>
+                    <ul class="feature-list">
+                        <li>JSON/HTML/CSS/JSに対応</li>
+                        <li>シンタックスハイライト</li>
+                        <li>Minify機能搭載</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Domain Switcher</h3>
+                    <p>URLペアを簡単に切り替え</p>
+                    <ul class="feature-list">
+                        <li>開発/本番環境の切り替え</li>
+                        <li>URLペアの登録・管理</li>
+                        <li>新しいタブで開くオプション</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Inline Checker</h3>
+                    <p>インラインコードを検出</p>
+                    <ul class="feature-list">
+                        <li>インラインCSS/JSを検出</li>
+                        <li>外部ファイル化を推奨</li>
+                        <li>詳細レポート表示</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="installation" id="installation">
+            <h2>インストール方法</h2>
+            <ol class="steps">
+                <li>
+                    GitHubリポジトリからC-kitフォルダをダウンロード
+                    <div class="code-block">git clone https://github.com/shimomura2020goout/claude-first-pjts.git</div>
+                </li>
+                <li>
+                    Chromeで chrome://extensions/ を開く
+                </li>
+                <li>
+                    右上の「デベロッパーモード」をONにする
+                </li>
+                <li>
+                    「パッケージ化されていない拡張機能を読み込む」をクリック
+                </li>
+                <li>
+                    C-kitフォルダを選択
+                </li>
+                <li>
+                    拡張機能が読み込まれ、すぐに使用可能になります！
+                </li>
+            </ol>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>
+                Built with ❤️ by
+                <a href="https://github.com/shimomura2020goout" target="_blank">shimomura2020goout</a>
+            </p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                🤖 Generated with <a href="https://claude.com/claude-code" target="_blank">Claude Code</a>
+            </p>
+            <p style="margin-top: 0.5rem;">
+                <a href="index.html">🏠 トップページ</a> |
+                <a href="https://github.com/shimomura2020goout/claude-first-pjts" target="_blank">View on GitHub</a> |
+                <a href="r-kit.html">R-kitも見る</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
