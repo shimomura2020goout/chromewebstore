@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C-kit - Web開発者向けツールキット</title>
-    <meta name="description" content="5つの便利機能を搭載したWeb開発者向けChrome拡張機能">
+    <meta name="description" content="6つの便利機能を搭載したWeb開発者向けChrome拡張機能">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -270,9 +270,9 @@
                 <div class="logo">🛠️</div>
                 <h1>C-kit</h1>
                 <p class="tagline">Web開発者向けツールキット</p>
-                <div class="version-badge">v2.1.0 - UI改善とEmbedded Checker実装</div>
+                <div class="version-badge">v2.5.0 - アカウント機能＆独立ウィンドウ追加</div>
                 <p style="color: #666; margin-bottom: 2rem;">
-                    5つの便利機能を搭載したChrome拡張機能
+                    6つの便利機能を搭載したChrome拡張機能
                 </p>
                 <div class="cta-buttons">
                     <a href="https://github.com/shimomura2020goout/claude-first-pjts/tree/main/C-kit" class="btn btn-primary">
@@ -288,7 +288,7 @@
 
     <div class="container">
         <section class="features">
-            <h2 class="section-title">5つの便利機能</h2>
+            <h2 class="section-title">6つの便利機能</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🔍</div>
@@ -342,6 +342,31 @@
                         <li>埋め込みstyle/scriptタグを検出</li>
                         <li>外部ファイル化を推奨</li>
                         <li>詳細レポート表示</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">👤</div>
+                    <h3>Account</h3>
+                    <p>Googleアカウント連携</p>
+                    <ul class="feature-list">
+                        <li>Chrome同期アカウントで認証</li>
+                        <li>設定の同期準備（V3.0.0で実装予定）</li>
+                        <li>プレミアム機能の基盤</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="features-grid" style="margin-top: 2rem;">
+                <div class="feature-card" style="grid-column: 1 / -1;">
+                    <div class="feature-icon">🪟</div>
+                    <h3>独立ウィンドウ機能 <span style="color: #667eea; font-size: 0.8em;">NEW in v2.5.0</span></h3>
+                    <p>フッターのボタンから新しいウィンドウで開く</p>
+                    <ul class="feature-list">
+                        <li>ポップアップの自動クローズ問題を解決</li>
+                        <li>作業中も常に表示可能</li>
+                        <li>現在アクティブなタブをウィンドウで開く</li>
+                        <li>V3.0.0でサイドパネルAPIへ移行予定</li>
                     </ul>
                 </div>
             </div>
