@@ -270,9 +270,9 @@
                 <div class="logo">🛠️</div>
                 <h1>C-kit</h1>
                 <p class="tagline">Web開発者向けツールキット</p>
-                <div class="version-badge">v2.5.0 - アカウント機能＆独立ウィンドウ追加</div>
+                <div class="version-badge">v3.0.0 - Stripe決済＆Pro版機能追加 🎉</div>
                 <p style="color: #666; margin-bottom: 2rem;">
-                    6つの便利機能を搭載したChrome拡張機能
+                    6つの便利機能＋Pro版限定機能を搭載したChrome拡張機能
                 </p>
                 <div class="cta-buttons">
                     <a href="https://github.com/shimomura2020goout/chromewebstore" class="btn btn-primary">
@@ -346,28 +346,57 @@
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">👤</div>
-                    <h3>Account</h3>
-                    <p>Googleアカウント連携</p>
+                    <div class="feature-icon">⭐</div>
+                    <h3>Pro Account <span style="color: #667eea; font-size: 0.8em;">NEW in v3.0.0</span></h3>
+                    <p>Stripe決済によるサブスクリプション</p>
                     <ul class="feature-list">
-                        <li>Chrome同期アカウントで認証</li>
-                        <li>設定の同期準備（V3.0.0で実装予定）</li>
-                        <li>プレミアム機能の基盤</li>
+                        <li>Googleアカウント連携</li>
+                        <li>設定のクラウド同期</li>
+                        <li>Pro限定機能の利用</li>
                     </ul>
                 </div>
             </div>
 
             <div class="features-grid" style="margin-top: 2rem;">
                 <div class="feature-card" style="grid-column: 1 / -1;">
-                    <div class="feature-icon">🪟</div>
-                    <h3>独立ウィンドウ機能 <span style="color: #667eea; font-size: 0.8em;">NEW in v2.5.0</span></h3>
-                    <p>フッターのボタンから新しいウィンドウで開く</p>
+                    <div class="feature-icon">📱</div>
+                    <h3>サイドパネル機能 <span style="color: #667eea; font-size: 0.8em;">NEW in v3.0.0</span></h3>
+                    <p>拡張機能アイコンをクリックしてサイドパネルで開く</p>
                     <ul class="feature-list">
-                        <li>ポップアップの自動クローズ問題を解決</li>
-                        <li>作業中も常に表示可能</li>
-                        <li>現在アクティブなタブをウィンドウで開く</li>
-                        <li>V3.0.0でサイドパネルAPIへ移行予定</li>
+                        <li>拡張機能アイコンクリックでサイドパネル表示</li>
+                        <li>作業中も常に横に表示可能</li>
+                        <li>右クリックメニューから別ウィンドウでも開ける</li>
+                        <li>レスポンシブデザイン対応</li>
                     </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing" id="pricing" style="background: rgba(255, 255, 255, 0.95); padding: 3rem 2rem; border-radius: 20px; margin: 3rem 0; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+            <h2 class="section-title">Pro版プラン <span style="color: #667eea; font-size: 0.7em;">NEW in v3.0.0</span></h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">🆓 Free</h3>
+                    <p style="font-size: 2rem; font-weight: 700; color: #deb887; margin-bottom: 1rem;">¥0<span style="font-size: 1rem; color: #666;">/月</span></p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 1.5rem;">
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center;">✅ リンクチェック（1日1回）</li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center;">✅ URL変換</li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center;">✅ コード整形</li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center;">✅ ドメイン切替（3組まで）</li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center;">✅ 埋め込みコード検出</li>
+                    </ul>
+                </div>
+                <div style="background: linear-gradient(135deg, #deb887 0%, #d2a679 100%); padding: 2rem; border-radius: 15px; box-shadow: 0 8px 16px rgba(222, 184, 135, 0.4); transform: scale(1.05);">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: white;">⭐ Pro</h3>
+                    <p style="font-size: 2rem; font-weight: 700; color: white; margin-bottom: 1rem;">¥500<span style="font-size: 1rem; color: rgba(255,255,255,0.8);">/月</span></p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 1.5rem; color: white;">
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center;">✨ リンクチェック（無制限）</li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center;">✨ ドメイン切替（無制限）</li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center;">✨ 設定のエクスポート</li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center;">✨ 設定のクラウド同期</li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center;">✨ 優先サポート</li>
+                    </ul>
+                    <p style="color: rgba(255,255,255,0.9); font-size: 0.9rem; margin-top: 1rem;">🔒 Stripe決済で安全にお支払い</p>
                 </div>
             </div>
         </section>
