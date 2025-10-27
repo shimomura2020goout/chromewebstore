@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C-kit Pro - 決済キャンセル</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 600px;
+      width: 100%;
+      padding: 60px 40px;
+      text-align: center;
+      animation: slideIn 0.5s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .cancel-icon {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 30px;
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: scaleIn 0.5s ease-out 0.2s both;
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+
+    .cancel-icon svg {
+      width: 60px;
+      height: 60px;
+      stroke: white;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    h1 {
+      font-size: 32px;
+      color: #2d3748;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #4a5568;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .info-box {
+      background: #f7fafc;
+      border-radius: 12px;
+      padding: 25px;
+      margin: 30px 0;
+      text-align: left;
+    }
+
+    .info-box h2 {
+      font-size: 18px;
+      color: #2d3748;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .info-box p {
+      color: #4a5568;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .info-box ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 15px;
+    }
+
+    .info-box li {
+      padding: 8px 0;
+      color: #4a5568;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+    }
+
+    .info-box li::before {
+      content: "✓";
+      color: #f5576c;
+      font-weight: bold;
+      margin-right: 10px;
+      font-size: 18px;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 16px 40px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .cta-button.primary {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+      box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+    }
+
+    .cta-button.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(245, 87, 108, 0.6);
+    }
+
+    .cta-button.secondary {
+      background: white;
+      color: #4a5568;
+      border: 2px solid #e2e8f0;
+    }
+
+    .cta-button.secondary:hover {
+      background: #f7fafc;
+      border-color: #cbd5e0;
+    }
+
+    .note {
+      margin-top: 30px;
+      padding: 15px;
+      background: #fffaf0;
+      border-left: 4px solid #ed8936;
+      border-radius: 4px;
+      text-align: left;
+      font-size: 14px;
+      color: #744210;
+    }
+
+    .note strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="cancel-icon">
+      <svg viewBox="0 0 52 52">
+        <line x1="16" y1="16" x2="36" y2="36"/>
+        <line x1="36" y1="16" x2="16" y2="36"/>
+      </svg>
+    </div>
+
+    <h1>決済がキャンセルされました</h1>
+    <p class="subtitle">
+      Pro版へのアップグレードがキャンセルされました。<br>
+      いつでも再度お試しいただけます。
+    </p>
+
+    <div class="info-box">
+      <h2>Pro版の特典</h2>
+      <p>アップグレードすると、以下の機能が利用可能になります：</p>
+      <ul>
+        <li>リンクチェック機能（無制限）</li>
+        <li>ドメイン切替ペア（無制限）</li>
+        <li>エクスポート機能（設定のバックアップ）</li>
+        <li>優先サポート</li>
+      </ul>
+    </div>
+
+    <div class="note">
+      <strong>無料版も引き続きご利用いただけます</strong>
+      無料版でも基本的な機能はすべて利用可能です。C-kit拡張機能を開いて、リンクチェックやコード整形などの機能をお試しください。
+    </div>
+
+    <div class="button-group">
+      <button class="cta-button secondary" onclick="window.close()">
+        このページを閉じる
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Optional: Auto-close after some time
+    // setTimeout(() => window.close(), 10000);
+  </script>
+</body>
+</html>
