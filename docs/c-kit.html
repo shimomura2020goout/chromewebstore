@@ -415,6 +415,86 @@
             </div>
         </section>
 
+        <section style="background: rgba(255, 255, 255, 0.95); padding: 3rem 2rem; border-radius: 20px; margin: 3rem 0; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+            <h2 style="text-align: center; font-size: 2rem; color: #deb887; margin-bottom: 2rem;">
+                🏢 組織管理Chrome向け - トークン認証
+                <span style="color: #F57C00; font-size: 0.7em;">NEW in v3.0.2</span>
+            </h2>
+
+            <div style="padding: 2rem; background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 193, 7, 0.1) 100%); border: 3px solid rgba(255, 215, 0, 0.3); border-radius: 15px; margin-bottom: 2rem;">
+                <h3 style="color: #F57C00; margin-bottom: 1rem; font-size: 1.3rem;">
+                    <span style="font-size: 1.5em;">🔑</span> Google同期が使えなくても、Pro版を利用できます
+                </h3>
+                <p style="color: #666; margin-bottom: 1.5rem; line-height: 1.8;">
+                    組織で管理されているChromeでは、個人のGoogleアカウントで同期ができないため、通常の方法ではPro版を利用できません。<br>
+                    <strong style="color: #333;">トークン認証</strong>を使えば、Google同期なしでPro版の全機能をご利用いただけます。
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                    <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 10px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">✅</div>
+                        <strong style="color: #333;">Google同期不要</strong>
+                        <p style="color: #666; font-size: 0.9rem; margin-top: 0.3rem;">任意のメールアドレスで登録</p>
+                    </div>
+                    <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 10px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔐</div>
+                        <strong style="color: #333;">安全な決済</strong>
+                        <p style="color: #666; font-size: 0.9rem; margin-top: 0.3rem;">Stripeで安全にお支払い</p>
+                    </div>
+                    <div style="text-align: center; padding: 1.5rem; background: white; border-radius: 10px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚡</div>
+                        <strong style="color: #333;">即座に利用開始</strong>
+                        <p style="color: #666; font-size: 0.9rem; margin-top: 0.3rem;">トークンでアクティベート</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="color: #deb887; margin-bottom: 1.5rem; font-size: 1.4rem;">トークン認証の手順</h3>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);">
+                    <div style="font-size: 2rem; color: #deb887; margin-bottom: 1rem; font-weight: 700;">1</div>
+                    <h4 style="color: #333; margin-bottom: 0.8rem;">メールアドレスで登録</h4>
+                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">
+                        任意のメールアドレスを入力して登録。個人・法人どちらでもOK
+                    </p>
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);">
+                    <div style="font-size: 2rem; color: #deb887; margin-bottom: 1rem; font-weight: 700;">2</div>
+                    <h4 style="color: #333; margin-bottom: 0.8rem;">Stripe決済</h4>
+                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">
+                        安全なStripe決済で月額$1をお支払い
+                    </p>
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);">
+                    <div style="font-size: 2rem; color: #deb887; margin-bottom: 1rem; font-weight: 700;">3</div>
+                    <h4 style="color: #333; margin-bottom: 0.8rem;">トークン受信</h4>
+                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">
+                        登録メールにアクティベーショントークンが届く
+                    </p>
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);">
+                    <div style="font-size: 2rem; color: #deb887; margin-bottom: 1rem; font-weight: 700;">4</div>
+                    <h4 style="color: #333; margin-bottom: 0.8rem;">拡張機能で入力</h4>
+                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">
+                        C-kitのAccountタブでトークンを入力してアクティベート
+                    </p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="token-purchase.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.2rem 2.5rem;">
+                    🔑 トークン版Pro版を購入する
+                </a>
+                <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">
+                    ※ 1つのトークンは1デバイスでのみ利用可能です
+                </p>
+            </div>
+        </section>
+
         <section class="installation" id="installation">
             <h2>インストール方法</h2>
 
